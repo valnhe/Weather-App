@@ -1,0 +1,27 @@
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #D4E3F5;
+
+}
+
+.general-app {
+  display: grid;
+  grid-template-areas: "forecast daily";
+  grid-template-columns: 1fr auto;
+  margin: 15px;
+}
+
+.ss {
+  grid-area: forecast;
+}
+
+@media (max-width: 768px) {
+  .general-app {
+    grid-template-areas: "daily" "forecast";
+    grid-template-columns: 1fr;
+  }
+  
+}
