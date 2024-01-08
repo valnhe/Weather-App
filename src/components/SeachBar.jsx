@@ -1,10 +1,42 @@
+import { useState , useEffect} from 'react';
+import axios from 'axios';
+
 import "./SearchBar.css";
 
-function SearchBar () {
+function SearchBar ({city, setCity, setCountry, setTemperature, setDesc, setHumidity, setWind, setIcon}) {
+
+    const key = "74cef3273f02bc7dco566fbta4fd0986";
+    const [search, setSearch] = useState("Viña del Mar");
+
+    function handleResponse(response) {
+        setCity(response.data.city);
+        setCountry(response.data.country);
+        setTemperature(response.data.temperature.current);
+        setDesc(response.data.condition.description);
+        setHumidity(response.data.temperature.humidity);
+        setWind(response.data.wind.speed);
+        setIcon(response.data.condition.icon_url);
+    }
+
+    function handleChange(e) {
+        setSearch(e.target.value);
+    }
+
+    function handleClick(e) {
+        e.preventDefault();
+        const url = `https://api.shecodes.io/weather/v1/current?query=${search}&key=${key}`;
+        axios.get(url).then(handleResponse);
+    }
+
+    useEffect(() => {
+        const url = `https://api.shecodes.io/weather/v1/current?query=${search}&key=${key}`;
+        axios.get(url).then(handleResponse);
+      }, []);
+
     return (
-        <form className="display-row">
+        <form className="display-row" onChange={handleChange}>
             <input type="text" placeholder="Enter city" />
-            <button type="submit" className="search-button">
+            <button type="submit" className="search-button" onClick={handleClick}>
                 <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#ffffff" fill="none" strokeLinecap="round" strokeLinejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                     <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
