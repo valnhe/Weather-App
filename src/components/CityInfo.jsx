@@ -24,7 +24,7 @@ function CityInfo ({city, country, temperature, desc, humidity, wind, icon}) {
                 <h3>{desc}</h3>
             </section>
             <DailyCondition humidity={humidity} wind={wind} />
-            <p> <a href="https://github.com/valnhe/Weather-App">Open-source</a>, by <a href="https://github.com/valnhe" rel="noreferrer" target="_blank">Valentina Castillo</a></p>
+            <p> <a href="https://github.com/valnhe/Weather-App" rel="noreferrer" target="_blank">Open-source</a>, by <a href="https://github.com/valnhe" rel="noreferrer" target="_blank">Valentina Castillo</a></p>
         </article>
     )
 } export default CityInfo;

@@ -3,7 +3,7 @@ import axios from 'axios';
 
 import "./SearchBar.css";
 
-function SearchBar ({city, setCity, setCountry, setTemperature, setDesc, setHumidity, setWind, setIcon}) {
+function SearchBar ({ setCity, setCountry, setTemperature, setDesc, setHumidity, setWind, setIcon}) {
 
     const key = "74cef3273f02bc7dco566fbta4fd0986";
     const [search, setSearch] = useState("Viña del Mar");
