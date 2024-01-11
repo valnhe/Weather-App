@@ -7,21 +7,20 @@ import './App.css'
 
 function App() {
 
-  const [city, setCity] = useState("Loading...");
-  const [country, setCountry] = useState("Loading...");
-  const [temperature, setTemperature] = useState("Loading...");
-  const [desc, setDesc] = useState("Loading...");
-  const [humidity, setHumidity] = useState(null);
-  const [wind, setWind] = useState(null);
-  const [icon, setIcon] = useState(null);
+  const [weather, setWeather] = useState(null);
 
   return (
     <div className='general-app'>
       <main className='forecast-section'>
-          <SearchBar city={city} setCity={setCity} setCountry={setCountry} setTemperature={setTemperature} setDesc={setDesc} setHumidity={setHumidity} setWind={setWind} setIcon={setIcon}/>
+          <SearchBar setWeather={setWeather}/>
           <h1>Weekly Forecast-</h1>
       </main>
-      <CityInfo city={city} country={country} temperature={temperature} desc={desc} humidity={humidity} wind={wind} icon={icon}/>
+      {
+        weather === null ? 
+        <CityInfo city={"Loading"} country={"Loading..."} temperature={0} desc={"Loading..."} humidity={0} wind={0} icon={"Loading..."} date={new Date()}/>
+        : 
+        <CityInfo city={weather.city} country={weather.country} temperature={weather.temperature} desc={weather.desc} humidity={weather.humidity} wind={weather.wind} icon={weather.icon} date={weather.date}/>
+      }
     </div>
   )
 }

@@ -3,19 +3,22 @@ import axios from 'axios';
 
 import "./SearchBar.css";
 
-function SearchBar ({ setCity, setCountry, setTemperature, setDesc, setHumidity, setWind, setIcon}) {
+function SearchBar ({setWeather}) {
 
     const key = "74cef3273f02bc7dco566fbta4fd0986";
     const [search, setSearch] = useState("Viña del Mar");
 
     function handleResponse(response) {
-        setCity(response.data.city);
-        setCountry(response.data.country);
-        setTemperature(response.data.temperature.current);
-        setDesc(response.data.condition.description);
-        setHumidity(response.data.temperature.humidity);
-        setWind(response.data.wind.speed);
-        setIcon(response.data.condition.icon_url);
+        setWeather({
+            city: response.data.city,
+            country: response.data.country,
+            temperature: response.data.temperature.current,
+            desc: response.data.condition.description,
+            humidity: response.data.temperature.humidity,
+            wind: response.data.wind.speed,
+            icon: response.data.condition.icon_url,
+            date: new Date(response.data.time * 1000) 
+        });
     }
 
     function handleChange(e) {
