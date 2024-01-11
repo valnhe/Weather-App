@@ -1,14 +1,15 @@
 import DailyCondition from "./DailyCondition";
+import FormatedDate from "./FormatedDate";
 import "./CityInfo.css";
 
-function CityInfo ({city, country, temperature, desc, humidity, wind, icon}) {
+function CityInfo ({city, country, temperature, desc, humidity, wind, icon, date}) {
     return (
         <article className="display-col">
             <header className="display-row">
                 <img src={icon} alt={desc} />
                 <div>
                     <p>Today</p>
-                    <p>Sun 13, 11:00 a.m.</p>
+                    <FormatedDate date={date}/>
                 </div>
             </header>
             <section className="display-col">
