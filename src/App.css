@@ -4,7 +4,6 @@
   align-items: center;
   height: 100vh;
   background-color: #D4E3F5;
-
 }
 
 body {
@@ -22,7 +21,7 @@ body {
 
 .forecast-section {
   grid-area: forecast;
-  background-color: #fff;
+  background-color: #ffffffbd;
   padding: 30px;
   color: #073C73;
   align-self: center;
@@ -63,8 +62,15 @@ body {
   }
 
   .forecast-conteiner {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     
+  }
+  
+}
+
+@media  (max-width: 425px) {
+  .forecast-conteiner {
+    grid-template-columns: 1fr 1fr;
   }
   
 }
