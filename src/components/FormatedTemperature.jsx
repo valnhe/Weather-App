@@ -1,24 +1,23 @@
 import { useState } from "react";
 import "./CityInfo.css";
 
-function FormatedTemperature ({temperature}) {
-    const [unit, setUnit] = useState(true);
+function FormatedTemperature ({setUnits, temperature}) {
 
-    const farenheit = () => {
-        return Math.round((temperature * 9) / 5 + 32);
-    }
+    const [unit, setUnit] = useState(true);
 
     function handleCelsius () {
         setUnit(true);
+        setUnits("metric");
     }
 
     function handleFarenheit () {
         setUnit(false);
+        setUnits("imperial");
     }
 
     return (
         <div className="display-row">
-            <h1>{unit ? Math.round(temperature): farenheit()}</h1>
+            <h1> {Math.round(temperature)}</h1>
             <div className="format">
                 <span className={unit ? "format-select" : "format-no-select"} onClick={handleCelsius}>°C</span>
                 <span className="format-select">|</span>
