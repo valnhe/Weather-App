@@ -1,22 +1,22 @@
 import "./ForecastCard.css"
+import FormatedDateForecast from "./FormatedDateForecast";
 
-function Card() {
+function Card({units, date, icon, desc, max, min, wind, humidity}) {
     return (
         <article className="forecast-card">
-            <p>Mon 13</p>
-            <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png" alt="" />
+            {date?<FormatedDateForecast date={date}/>:""}
+            <img src={icon} alt={desc} />
             <div className="info-forecast">
-                <section className="display-col">
+                <section>
                     <div>
-                        <span className="max-forecast">21°</span><span className="min-forecast">13°</span>
+                        <span className="max-forecast">{Math.round(max)}°</span><span className="min-forecast">{Math.round(min)}°</span>
                     </div>
-                    <h4>Sunny</h4>
+                    <h4>{desc}</h4>
                 </section>
                 <section className="wind-humidity-info">
-                    <p>Wind: 13 km/h</p>
-                    <p>Humidity: 13%</p>
+                    <p>Wind: {Math.round(wind)} {units === "metric"? "km/h" : "mph"}</p>
+                    <p>Humidity: {Math.round(humidity)}%</p>
                 </section>
-
             </div>
         </article>
     )

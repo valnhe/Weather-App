@@ -1,13 +1,13 @@
 .forecast-card {
-    border: 0.5px solid rgb(168, 168, 168);
+    background-color: #fff;
     border-radius: 8px;
-    background-color: transparent;
     padding: 13px 10px;
-    box-shadow: 2px 2px 5px rgba(80, 80, 80, 0.1);
+    box-shadow: 0px 1px 13px 0px rgba(212,227,245,0.66);
 }
 
 .forecast-card img {
     padding: 0px;
+    margin-left: -18px;
 }
 
 .forecast-card p {
@@ -19,9 +19,14 @@
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
+
+.info-forecast h4 {
+    max-width: 100px;
+    text-transform: capitalize;
+}	
 
 .wind-humidity-info p{
     font-size: 12px;
