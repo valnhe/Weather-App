@@ -1,15 +1,17 @@
 form {
     gap: 10px;
+    margin-bottom: 20px;
+    width: 100%;
 }
 
 input {
     border: rgb(168, 168, 168) 1px solid;
     margin: 5px auto;
     padding: 5px;
-    width: 60%;
     border-radius: 3px;
     box-shadow: 6px 3px 20px rgba(82, 81, 81, 0.1);
-    height: 40px
+    height: 40px;
+    width: 100%;
   }
   
   form button {
