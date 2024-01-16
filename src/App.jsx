@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import CityInfo from './components/CityInfo';
 import SearchBar from "./components/SeachBar";
+import Card from './components/ForecastCard';
 
 import './App.css'
 
@@ -13,7 +14,13 @@ function App() {
     <div className='general-app'>
       <main className='forecast-section'>
           <SearchBar setWeather={setWeather}/>
-          <h1>Weekly Forecast-</h1>
+          <div className='forecast-conteiner'>
+            <Card/>
+            <Card/>
+            <Card/>
+            <Card/>
+            <Card/>
+          </div>
       </main>
       {
         weather === null ? 
