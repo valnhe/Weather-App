@@ -5,13 +5,14 @@ form {
 }
 
 input {
-    border: rgb(168, 168, 168) 1px solid;
+    border: rgb(211, 210, 210) 1px solid;
     margin: 5px auto;
     padding: 5px;
     border-radius: 3px;
     box-shadow: 6px 3px 20px rgba(82, 81, 81, 0.1);
     height: 40px;
     width: 100%;
+    
   }
   
   form button {
