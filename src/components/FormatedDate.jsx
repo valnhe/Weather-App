@@ -8,11 +8,5 @@ function FormatedDate({date}) {
         hour = `0${hour}`;
     }
 
-    let minutes = date.getMinutes();
-    if (minutes < 10) {
-        minutes = `0${minutes}`;
-    }
-
-
-  return <p>{day} {hour}:{minutes}</p>
+  return <p>{day} {hour}:00</p>
 } export default FormatedDate;
