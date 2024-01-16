@@ -5,7 +5,7 @@ import "./CityInfo.css";
 
 function CityInfo ({city, country, temperature, desc, humidity, wind, icon, date}) {
     return (
-        <article className="display-col">
+        <article className="city-info">
             <header className="display-row">
                 <img src={icon} alt={desc} />
                 <div>
@@ -19,7 +19,7 @@ function CityInfo ({city, country, temperature, desc, humidity, wind, icon, date
                 <h3>{desc}</h3>
             </section>
             <DailyCondition humidity={humidity} wind={wind} />
-            <p> <a href="https://github.com/valnhe/Weather-App" rel="noreferrer" target="_blank">Open-source</a>, by <a href="https://github.com/valnhe" rel="noreferrer" target="_blank">Valentina Castillo</a></p>
+            <p className="open-source"> <a href="https://github.com/valnhe/Weather-App" rel="noreferrer" target="_blank">Open-source</a>, by <a href="https://github.com/valnhe" rel="noreferrer" target="_blank">Valentina Castillo</a></p>
         </article>
     )
 } export default CityInfo;
