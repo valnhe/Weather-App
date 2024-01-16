@@ -1,6 +1,6 @@
 import "./DailyCondition.css"
 
-function DailyCondition ({humidity, wind}) {
+function DailyCondition ({units, humidity, wind, max, min}) {
     return (
         <section className="dailyCondition">
             <div>
@@ -17,7 +17,7 @@ function DailyCondition ({humidity, wind}) {
                     <path d="M3 12h15.5a2.5 2.5 0 1 1 -2.34 3.24" />
                     <path d="M4 16h5.5a2.5 2.5 0 1 1 -2.34 3.24" />
                 </svg>
-                <p>{Math.round(wind)} km/h</p>
+                <p>{Math.round(wind)} {units === "metric"? "km/h" : "mph"}</p>
             </div>
             <div>
                 <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-arrow-narrow-up" width="24" height="24" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
@@ -26,7 +26,7 @@ function DailyCondition ({humidity, wind}) {
                     <path d="M16 9l-4 -4" />
                     <path d="M8 9l4 -4" />
                 </svg>
-                <p>20°C</p>
+                <p>{max?Math.round(max):""}{units === "metric"? "°C" : "°F"}</p>
             </div>
             <div>
                 <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-arrow-narrow-down" width="24" height="24" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
@@ -35,7 +35,7 @@ function DailyCondition ({humidity, wind}) {
                     <path d="M16 15l-4 4" />
                     <path d="M8 15l4 4" />
                 </svg>
-                <p>17°C</p>
+                <p>{min?Math.round(min):""}{units === "metric"? "°C" : "°F"}</p>
             </div>
         </section>
     )
