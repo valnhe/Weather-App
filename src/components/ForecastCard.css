@@ -1,0 +1,52 @@
+.forecast-card {
+    border: 0.5px solid rgb(168, 168, 168);
+    border-radius: 8px;
+    background-color: transparent;
+    padding: 13px 10px;
+    box-shadow: 2px 2px 5px rgba(80, 80, 80, 0.1);
+}
+
+.forecast-card img {
+    padding: 0px;
+}
+
+.forecast-card p {
+    color: #073C73;
+    font-weight: 600;
+}
+
+.info-forecast {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.wind-humidity-info p{
+    font-size: 12px;
+    font-weight: 500;
+    color: rgb(168, 168, 168);
+}
+
+.min-forecast {
+    font-size: 14px;
+    font-weight: 500;
+    color: #7198C8;
+}
+
+.max-forecast {
+    font-weight: 500;
+    font-size: 18px;
+    font-weight: 700;
+    margin-right: 5px;
+}
+
+@media (max-width: 768px) {
+    
+    .info-forecast {
+        justify-content: start;
+    }
+
+
+}
