@@ -42,7 +42,6 @@ function App() {
   function handleClick(event) {
     event.preventDefault();
     setActualCity(search);
-    setLoading(true);
   }
 
   useEffect(() => {
@@ -53,20 +52,22 @@ function App() {
   function handleForecast(response) {
     setForecast(response.data.daily);
     setWeatherData({...weather, max: response.data.daily[0].temperature.maximum, min: response.data.daily[0].temperature.minimum})
-    setLoading(false);
   }
 
   useEffect(() => {
     if (weather != null) {
       const ForecastApi = `https://api.shecodes.io/weather/v1/forecast?lon=${weather.coordinates.longitude}&lat=${weather.coordinates.latitude}&key=${apiKey}&units=${units}`
       axios.get(ForecastApi).then(handleForecast);
+      setLoading(false);
       
     }
   }, [weather]);
+  
+  
+if (forecast === null || loading === true) {
+  return <Spinner/>
+} else {
 
-  if (forecast === null || loading === true) {
-    return <Spinner/>
-  } else {
   return (
       <div className='general-app'>
           <main className='forecast-section'>
@@ -89,5 +90,4 @@ function App() {
     );
   }
 }
-
 export default App;
