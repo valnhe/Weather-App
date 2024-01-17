@@ -2,7 +2,7 @@
     grid-area: daily;
     padding: 30px;
     gap: 20px;
-    height: 110%;
+    height: 90%;
 
     color: white;
     background-color: #7198C8;
@@ -80,6 +80,12 @@ p a {
     padding: 20px;
 }
 
+@media screen and (min-width: 1280px) {
+    .city-info {
+        height: 110%;
+    }
+    
+}
 
 @media (max-width: 768px) {
     .city-info{
